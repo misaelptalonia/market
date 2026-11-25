@@ -1,82 +1,82 @@
+/* ==========================================================================
+VARIABLES Y TIPOGRAFÍAS BASE — EL ALQUIMISTA
+========================================================================== */
 :root {
-    color-scheme: dark;
-    font-family: "Inter", sans-serif;
-    background: #0b0c10;
+--gold-accent: #d4af37;
+--gold-hover: #f3cf55;
+--obsidian-bg: #0b0c10;
+--slate-card: #14161f;
 }
 
 body {
-    min-width: 320px;
-    margin: 0;
-    background: #0b0c10;
-}
-
-#toast-notification {
-    transform: translateY(6rem);
-    opacity: 0;
-}
-
-#toast-notification.toast-visible {
-    transform: translateY(0);
-    opacity: 1;
+font-family: 'Inter', sans-serif;
+background-color: var(--obsidian-bg);
+color: #e2e8f0;
+overflow-x: hidden;
 }
 
 .font-alchemy {
-    font-family: "Cinzel", serif;
+font-family: 'Cinzel', serif;
 }
 
 .font-literary {
-    font-family: "Lora", serif;
+font-family: 'Lora', serif;
 }
 
-.gold-glow {
-    box-shadow: 0 0 28px rgb(245 158 11 / 20%);
+/* ==========================================================================
+ANIMACIÓN ASCENDENTE DEL HERO
+========================================================================== */
+@keyframes ascendFade {
+0% {
+opacity: 0;
+transform: translateY(45px) scale(0.97);
+filter: blur(4px);
 }
-
-.gold-glow:hover {
-    box-shadow: 0 0 38px rgb(245 158 11 / 38%);
+100% {
+opacity: 1;
+transform: translateY(0) scale(1);
+filter: blur(0);
 }
-
-.animate-ascend-subtitle,
-.animate-ascend-title,
-.animate-ascend-btn {
-    opacity: 0;
-    animation: ascend-in 900ms ease-out forwards;
 }
 
 .animate-ascend-title {
-    animation-delay: 150ms;
+animation: ascendFade 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-ascend-subtitle {
+opacity: 0;
+animation: ascendFade 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
 }
 
 .animate-ascend-btn {
-    animation-delay: 300ms;
+opacity: 0;
+animation: ascendFade 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
 }
 
-.nav-btn:focus-visible,
-button:focus-visible,
-a:focus-visible {
-    outline: 2px solid #fbbf24;
-    outline-offset: 3px;
+/* ==========================================================================
+EFECTOS VISUALES Y SCROLLBAR PERSONALIZADO
+========================================================================== */
+.gold-glow {
+box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
 }
 
-@keyframes ascend-in {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.gold-glow:hover {
+box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
+::-webkit-scrollbar {
+width: 8px;
+}
+
+::-webkit-scrollbar-track {
+background: #0b0c10;
+}
+
+::-webkit-scrollbar-thumb {
+background: #2d3142;
+border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #d4af37;
 }
