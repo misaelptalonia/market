@@ -1,0 +1,82 @@
+:root {
+    color-scheme: dark;
+    font-family: "Inter", sans-serif;
+    background: #0b0c10;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    background: #0b0c10;
+}
+
+#toast-notification {
+    transform: translateY(6rem);
+    opacity: 0;
+}
+
+#toast-notification.toast-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.font-alchemy {
+    font-family: "Cinzel", serif;
+}
+
+.font-literary {
+    font-family: "Lora", serif;
+}
+
+.gold-glow {
+    box-shadow: 0 0 28px rgb(245 158 11 / 20%);
+}
+
+.gold-glow:hover {
+    box-shadow: 0 0 38px rgb(245 158 11 / 38%);
+}
+
+.animate-ascend-subtitle,
+.animate-ascend-title,
+.animate-ascend-btn {
+    opacity: 0;
+    animation: ascend-in 900ms ease-out forwards;
+}
+
+.animate-ascend-title {
+    animation-delay: 150ms;
+}
+
+.animate-ascend-btn {
+    animation-delay: 300ms;
+}
+
+.nav-btn:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #fbbf24;
+    outline-offset: 3px;
+}
+
+@keyframes ascend-in {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
